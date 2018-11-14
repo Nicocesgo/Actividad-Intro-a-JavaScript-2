@@ -45,15 +45,7 @@ de un segundo, al volver hacer click debe volver a estar en blanco y negro.
 </head>
 
 <body>
-
-    <div class="gallery">
-        <img class="thumb" src="https://picsum.photos/400/400?image=0">
-        <img class="thumb" src="https://picsum.photos/400/400?image=1">
-        <img class="thumb" src="https://picsum.photos/400/400?image=2">
-        <img class="thumb" src="https://picsum.photos/400/400?image=3">
-        <img class="thumb" src="https://picsum.photos/400/400?image=4">
-        <img class="thumb" src="https://picsum.photos/400/400?image=5">
-    </div>
+    <img class="featured" src="https://picsum.photos/400/400?image=0">
 
     <div class="gallery">
         <img class="thumb" src="https://picsum.photos/400/400?image=0">
@@ -67,6 +59,11 @@ de un segundo, al volver hacer click debe volver a estar en blanco y negro.
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script>
         $(".featured").attr("src", "https://picsum.photos/400/400?image=6")
+
+        $(".thumb").on("click", function() {
+            source = $(this).attr("src");
+            $(".featured").attr("src", source);
+        })
 
         $(".thumb").on("click", function() {
             $(this).toggleClass("gris");
