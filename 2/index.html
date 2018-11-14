@@ -1,0 +1,78 @@
+<!-- Crear una galería de imágenes
+
+Todas las imágenes deben estar desaturada (en blanco y negro)
+ver: https://stackoverflow.com/questions/22994810/how-do-i-desaturate-and-saturate-an-image-using-css
+
+Al hacer click sobre la imágen esta debe recuperar su color con una transición
+de un segundo, al volver hacer click debe volver a estar en blanco y negro.
+-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 2</title>
+    <style>
+        .featured {
+            width: 400px;
+            height: 400px;
+            display: block;
+            margin: auto;
+            transition: 1s;
+        }
+
+        .gallery {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .thumb {
+            width: 150px;
+            height: 150px;
+            transition: 1s;
+        }
+
+        .gris {
+            filter: gray;
+            /* IE6-9 */
+            -webkit-filter: grayscale(1);
+            /* Google Chrome, Safari 6+ & Opera 15+ */
+            filter: grayscale(1);
+            /* Microsoft Edge and Firefox 35+ */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="gallery">
+        <img class="thumb" src="https://picsum.photos/400/400?image=0">
+        <img class="thumb" src="https://picsum.photos/400/400?image=1">
+        <img class="thumb" src="https://picsum.photos/400/400?image=2">
+        <img class="thumb" src="https://picsum.photos/400/400?image=3">
+        <img class="thumb" src="https://picsum.photos/400/400?image=4">
+        <img class="thumb" src="https://picsum.photos/400/400?image=5">
+    </div>
+
+    <div class="gallery">
+        <img class="thumb" src="https://picsum.photos/400/400?image=0">
+        <img class="thumb" src="https://picsum.photos/400/400?image=1">
+        <img class="thumb" src="https://picsum.photos/400/400?image=2">
+        <img class="thumb" src="https://picsum.photos/400/400?image=3">
+        <img class="thumb" src="https://picsum.photos/400/400?image=4">
+        <img class="thumb" src="https://picsum.photos/400/400?image=5">
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script>
+        $(".featured").attr("src", "https://picsum.photos/400/400?image=6")
+
+        $(".thumb").on("click", function() {
+            source = $(this).toggleClass("gris");
+            source = $("thumb");
+        })
+    </script>
+</body>
+
+</html>
